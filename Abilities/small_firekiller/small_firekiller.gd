@@ -4,6 +4,7 @@ const FIREKILLER = preload("res://Abilities/small_firekiller/small_firekiller_pr
 func execute(target: Vector2):
 	var fkscene = FIREKILLER.instantiate()
 	fkscene.direction = global_position.direction_to(target)
-	add_sibling(fkscene)
+	fkscene.global_position = global_position
+	get_node("/root").add_child(fkscene)
 	
 	

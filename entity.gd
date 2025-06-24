@@ -14,8 +14,8 @@ func move(direction: Vector2) -> void:
 	velocity = direction * MOVE_SPEED
 	global_position += velocity
 
-func load_ability(name: String) -> Node2D:
-	var ability := load("res://Abilities/" + name + '/' + name + ".tscn")
+func load_ability(ability_name: String) -> Node2D:
+	var ability := load("res://Abilities/" + ability_name + '/' + ability_name + ".tscn")
 	var ability_instance = ability.instantiate()
 	add_child(ability_instance)
 	return ability_instance
