@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://sf3hig334e6i"]
+
+[ext_resource type="PackedScene" uid="uid://6xwlispt4ior" path="res://Abilities/ability.tscn" id="1_nv8pb"]
+[ext_resource type="Script" uid="uid://dpksxb7shk0if" path="res://Abilities/spikes/spikes.gd" id="2_3r71v"]
+
+[node name="Spikes" instance=ExtResource("1_nv8pb")]
+script = ExtResource("2_3r71v")

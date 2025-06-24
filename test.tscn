@@ -9,3 +9,5 @@ zoom = Vector2(3, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_37kl0")]
 position = Vector2(-4, 28)
+
+[node name="Projectiles" type="Node2D" parent="."]
