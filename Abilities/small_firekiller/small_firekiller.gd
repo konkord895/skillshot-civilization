@@ -5,6 +5,6 @@ func _execute(target: Vector2):
 	var fire_inst = FIREKILLER.instantiate()
 	fire_inst.direction = global_position.direction_to(target)
 	fire_inst.global_position = global_position
-	get_node("/root/Projectiles").add_child(fire_inst)
+	Projectiles.add_child(fire_inst)
 	
 	

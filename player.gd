@@ -5,7 +5,7 @@ var ability2 = load_ability("spikes")
 
 
 func _ready() -> void:
-	print(ability1.name)
+	print(ability2.name)
 	
 	
 func _physics_process(delta: float) -> void:
