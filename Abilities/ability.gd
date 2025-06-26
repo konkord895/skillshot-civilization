@@ -6,7 +6,6 @@ extends Node2D
 func execute(target: Vector2) -> void:
 	if cooldown.time_left == 0:
 		_execute(target)
-		cooldown.start()
 
 func _execute(target: Vector2) -> void:
 	pass

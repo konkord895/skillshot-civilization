@@ -6,5 +6,5 @@ func _execute(target: Vector2):
 	fire_inst.direction = global_position.direction_to(target)
 	fire_inst.global_position = global_position
 	Projectiles.add_child(fire_inst)
-	
+	cooldown.start()
 	

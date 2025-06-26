@@ -9,3 +9,7 @@ func _ready() -> void:
 	sprite_2d.visible = true
 	monitoring = true
 	
+
+
+func _delete() -> void:
+	queue_free()
