@@ -15,7 +15,7 @@ func _ready() -> void:
 	spawn_interval_timer.wait_time = ability_duration_timer.wait_time / amount
 
 
-func _execute(target: Vector2) -> void:
+func _execute(target: Vector2, state: State) -> void:
 	if ability_duration_timer.time_left == 0: # Create a cursor
 		cursor = SPIKE_CURSOR.instantiate()
 		cursor.global_position = target

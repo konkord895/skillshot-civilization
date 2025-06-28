@@ -8,7 +8,7 @@
 radius = 15.0
 
 [sub_resource type="Curve" id="Curve_41hfx"]
-_data = [Vector2(0.176471, 1), 0.0, 0.0, 0, 0, Vector2(0.551471, 0.977528), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.176471, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.808824, 0.0224719), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_k5fjk"]
@@ -36,7 +36,6 @@ position = Vector2(0, -24)
 texture = ExtResource("2_4mqbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_dl5ej")
 
@@ -45,11 +44,12 @@ emitting = false
 amount = 16
 texture = ExtResource("3_t38qj")
 lifetime = 0.5
-one_shot = true
 process_material = SubResource("ParticleProcessMaterial_mhwr8")
 
 [node name="DeleteTimer" type="Timer" parent="."]
 wait_time = 3.0
-autostart = true
+
+[node name="ActivationTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="timeout" from="DeleteTimer" to="." method="_delete"]
