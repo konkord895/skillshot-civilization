@@ -1,10 +1,10 @@
 extends Ability
 const FIREKILLER = preload("res://Abilities/small_firekiller/small_firekiller_projectile.tscn")
 
-func _execute(target: Vector2):
+func _execute(target: Vector2, state: State):
 	var fire_inst = FIREKILLER.instantiate()
 	fire_inst.direction = global_position.direction_to(target)
 	fire_inst.global_position = global_position
-	get_node("/root/Projectiles").add_child(fire_inst)
-	
+	Projectiles.add_child(fire_inst)
+	cooldown.start()
 	

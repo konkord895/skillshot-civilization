@@ -3,10 +3,15 @@ extends Node2D
 
 @onready var cooldown: Timer = $Cooldown
 
-func execute(target: Vector2) -> void:
-	if cooldown.time_left == 0:
-		_execute(target)
-		cooldown.start()
+enum State{
+	PRESSED,
+	HELD,
+	RELEASED,
+}
 
-func _execute(target: Vector2) -> void:
+func execute(target: Vector2, state: State) -> void:
+	if cooldown.time_left == 0:
+		_execute(target, state)
+
+func _execute(target: Vector2, state: State) -> void:
 	pass
