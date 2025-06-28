@@ -4,6 +4,7 @@ extends Area2D
 @export var MOVE_SPEED := 5.0
 var velocity := Vector2.ZERO
 
+
 func _ready() -> void:
 	pass
 

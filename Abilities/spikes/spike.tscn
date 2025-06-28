@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://lb7md60bxhck"]
+
+[ext_resource type="Script" uid="uid://beh3h0g4x1tdv" path="res://Abilities/spikes/spike.gd" id="1_0xbqg"]
+[ext_resource type="Texture2D" uid="uid://reu662es46mq" path="res://Abilities/spikes/spikes.png" id="2_4mqbd"]
+[ext_resource type="Texture2D" uid="uid://da1dmq0lufcyp" path="res://Abilities/spikes/earth_particle.png" id="3_t38qj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dl5ej"]
+radius = 15.0
+
+[sub_resource type="Curve" id="Curve_41hfx"]
+_data = [Vector2(0.176471, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.808824, 0.0224719), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_k5fjk"]
+curve = SubResource("Curve_41hfx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mhwr8"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 0.5, 0.5)
+emission_shape = 1
+emission_sphere_radius = 21.0
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+alpha_curve = SubResource("CurveTexture_k5fjk")
+
+[node name="Spike" type="Area2D"]
+monitoring = false
+monitorable = false
+script = ExtResource("1_0xbqg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -24)
+texture = ExtResource("2_4mqbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_dl5ej")
+
+[node name="WarningParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 16
+texture = ExtResource("3_t38qj")
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_mhwr8")
+
+[node name="DeleteTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="ActivationTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="DeleteTimer" to="." method="_delete"]

@@ -88,7 +88,7 @@ animations = [{
 size = Vector2(23, 10)
 >>>>>>> Stashed changes
 
-[node name="AnimatableBody2D" type="Area2D"]
+[node name="SmallFirekillerProjectile" type="Area2D"]
 script = ExtResource("1_drsp1")
 
 <<<<<<< Updated upstream
@@ -109,5 +109,5 @@ shape = SubResource("RectangleShape2D_7kyaj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mu2fc")
 autoplay = "default"
-frame_progress = 0.939418
+frame_progress = 0.340545
 flip_h = true
