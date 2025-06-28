@@ -1,15 +1,9 @@
 class_name Entity
 extends Area2D
 
-@export var MOVE_SPEED := 5.0
+@export var MOVE_SPEED := 3.0
 var velocity := Vector2.ZERO
-
-
-func _ready() -> void:
-	pass
-
-func _process(delta: float) -> void:
-	pass
+@onready var sprite: Sprite2D = $Sprite
 
 func move(direction: Vector2) -> void:
 	velocity = direction * MOVE_SPEED

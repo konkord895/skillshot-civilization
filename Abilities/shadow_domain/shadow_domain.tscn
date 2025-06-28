@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvpj5cdbxgace"]
+
+[ext_resource type="PackedScene" uid="uid://6xwlispt4ior" path="res://Abilities/ability.tscn" id="1_vq8cg"]
+[ext_resource type="Script" uid="uid://clx1ramjokfy0" path="res://Abilities/shadow_domain/shadow_domain.gd" id="2_ch511"]
+
+[node name="shadow_domain" instance=ExtResource("1_vq8cg")]
+script = ExtResource("2_ch511")
+radius = 150.0
+
+[node name="Cooldown" parent="." index="0"]
+wait_time = 10.0
+
+[node name="AbilityDuration" type="Timer" parent="." index="1"]
+wait_time = 5.0
