@@ -1,55 +1,54 @@
-[gd_scene load_steps=15 format=3 uid="uid://8qprcriqjy8u"]
+[gd_scene load_steps=14 format=3 uid="uid://bhfcnipy2ygwm"]
 
-[ext_resource type="Script" uid="uid://dln5t8lqrnh1h" path="res://Abilities/small_firekiller/small_firekiller_projectile.gd" id="1_drsp1"]
+[ext_resource type="Script" uid="uid://4l3cd7afoviu" path="res://Abilities/small_firekiller/small_firekiller_projectile.gd" id="1_drsp1"]
 [ext_resource type="Texture2D" uid="uid://vp2mmgerlks3" path="res://Abilities/small_firekiller/small_firekiller.png" id="2_6y216"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kyaj"]
-<<<<<<< Updated upstream
-size = Vector2(52, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y216"]
+atlas = ExtResource("2_6y216")
+region = Rect2(0, 0, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eeknk"]
 atlas = ExtResource("2_6y216")
-region = Rect2(0, 0, 96, 48)
+region = Rect2(96, 0, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkyc6"]
 atlas = ExtResource("2_6y216")
-region = Rect2(96, 0, 96, 48)
+region = Rect2(192, 0, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c717a"]
 atlas = ExtResource("2_6y216")
-region = Rect2(192, 0, 96, 48)
+region = Rect2(0, 46, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xnaao"]
 atlas = ExtResource("2_6y216")
-region = Rect2(0, 48, 96, 48)
+region = Rect2(96, 46, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3xrp"]
 atlas = ExtResource("2_6y216")
-region = Rect2(96, 48, 96, 48)
+region = Rect2(192, 46, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjsj3"]
 atlas = ExtResource("2_6y216")
-region = Rect2(192, 48, 96, 48)
+region = Rect2(0, 92, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_74usi"]
 atlas = ExtResource("2_6y216")
-region = Rect2(0, 96, 96, 48)
+region = Rect2(96, 92, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wn5tp"]
 atlas = ExtResource("2_6y216")
-region = Rect2(96, 96, 96, 48)
+region = Rect2(192, 92, 96, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l0gn"]
 atlas = ExtResource("2_6y216")
-region = Rect2(192, 96, 96, 48)
+region = Rect2(0, 138, 96, 46)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v76i4"]
-atlas = ExtResource("2_6y216")
-region = Rect2(0, 144, 96, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mu2fc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v76i4"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y216")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eeknk")
 }, {
@@ -76,38 +75,19 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5l0gn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v76i4")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
-=======
-size = Vector2(23, 10)
->>>>>>> Stashed changes
 
-[node name="AnimatableBody2D" type="Area2D"]
+[node name="SmallFirekillerProjectile1" type="Area2D"]
 script = ExtResource("1_drsp1")
 
-<<<<<<< Updated upstream
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, 0)
-=======
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -15.0
-offset_top = -7.0
-offset_right = 16.0
-offset_bottom = 7.0
-color = Color(1, 0, 0, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
->>>>>>> Stashed changes
-shape = SubResource("RectangleShape2D_7kyaj")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_mu2fc")
+sprite_frames = SubResource("SpriteFrames_v76i4")
 autoplay = "default"
-frame_progress = 0.939418
+frame = 9
+frame_progress = 0.145526
+speed_scale = 3.0
 flip_h = true

@@ -12,5 +12,6 @@ func _ready() -> void:
 
 
 
+
 func _process(delta):
 	global_position += delta * speed * direction
