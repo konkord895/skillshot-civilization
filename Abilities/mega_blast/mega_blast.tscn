@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ya01fnbnyux"]
+
+[ext_resource type="Script" uid="uid://crylvsakvm5rg" path="res://Abilities/mega_blast/mega_blast.gd" id="1_8kx7b"]
+
+[node name="MegaBlast" type="Node2D"]
+script = ExtResource("1_8kx7b")
+
+[node name="Cooldown" type="Timer" parent="."]
