@@ -3,11 +3,13 @@ extends Entity
 @onready var ability1 = load_ability("small_firekiller")
 @onready var ability2 = load_ability("spikes")
 @onready var ability3 = load_ability("shadow_domain")
+@onready var ability4 = load_ability('mega_blast')
 
 @onready var abilities = {
 	1: ability1,
 	2: ability2,
 	3: ability3,
+	4: ability4
 }
 
 func _physics_process(delta: float) -> void:

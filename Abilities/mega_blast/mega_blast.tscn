@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://crylvsakvm5rg" path="res://Abilities/mega_blast/mega_blast.gd" id="1_8kx7b"]
 
-[node name="MegaBlast" type="Node2D"]
+[node name="mega_blast" type="Node2D"]
 script = ExtResource("1_8kx7b")
 
 [node name="Cooldown" type="Timer" parent="."]
+wait_time = 4.122
+one_shot = true
+
+[node name="Act" type="Timer" parent="."]
+wait_time = 0.438
