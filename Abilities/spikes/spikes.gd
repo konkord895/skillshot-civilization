@@ -3,7 +3,7 @@ extends Ability
 @export var amount := 3
 @export var ability_duration := 10.0
 @export var cursor_speed := 3.0
-const SPIKE_CURSOR = preload("res://Abilities/spikes/spike-cursor.tscn")
+const SPIKE_CURSOR = preload("res://Abilities/spikes/spike-cursor.png")
 const SPIKE = preload("res://Abilities/spikes/spike.tscn")
 var cursor : Sprite2D
 @onready var ability_duration_timer: Timer = $AbilityDuration
@@ -17,7 +17,8 @@ func _ready() -> void:
 
 func _execute(target: Vector2, state: State) -> void:
 	if ability_duration_timer.time_left == 0: # Create a cursor
-		cursor = SPIKE_CURSOR.instantiate()
+		cursor = Sprite2D.new()
+		cursor.texture = SPIKE_CURSOR
 		cursor.global_position = target
 		Projectiles.add_child(cursor)
 		ability_duration_timer.start()
@@ -32,7 +33,6 @@ func _on_ability_duration_timeout() -> void:
 	cooldown.start()
 	cursor.queue_free()
 	spawn_interval_timer.stop()
-
 
 func _spawn_spike() -> void: # Spawn spikes at equal intervals
 	var spike = SPIKE.instantiate()
