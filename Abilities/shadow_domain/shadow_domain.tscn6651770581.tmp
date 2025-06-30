@@ -15,8 +15,4 @@ wait_time = 10.0
 wait_time = 5.0
 one_shot = true
 
-[node name="TeleportCooldown" type="Timer" parent="." index="2"]
-wait_time = 2.0
-one_shot = true
-
 [connection signal="timeout" from="AbilityDuration" to="." method="_on_ability_duration_timeout"]

@@ -2,7 +2,7 @@ extends Area2D
 
 var speed := 80.0
 var end_speed := 400
-var direction := Vector2.ZERO
+var direction := Vector2.RIGHT
 
 func _ready() -> void:
 	rotation = direction.angle()
