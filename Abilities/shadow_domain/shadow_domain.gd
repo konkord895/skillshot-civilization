@@ -38,11 +38,11 @@ func _execute(target: Vector2, state: State):
 		var tween = create_tween()
 		tween.set_parallel(true)
 		tween.tween_method(func(value): shadow.material.set_shader_parameter("progress", value), 0.0, 1.0, 1.0)
-		tween.tween_method(func(value): shadow.material.set_shader_parameter("mix_value", value), 0.0, 1.0, 0.5)
+		tween.tween_method(func(value): shadow.material.set_shader_parameter("mix_value", value), 0.0, 1.0, 0.2)
 
 		user.sprite.material.shader = MELT
 		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("progress", value), 1.0, 0.0, 0.3)
-		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("mix_value", value), 1.0, 0.0, 0.3)
+		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("mix_value", value), 1.0, 0.0, 0.7)
 		user.get_stunned(0.3)
 		#endregion
 
