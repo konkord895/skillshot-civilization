@@ -3,8 +3,8 @@ extends Ability
 @export var amount := 3
 @export var ability_duration := 10.0
 @export var cursor_speed := 3.0
-const SPIKE_CURSOR = preload("res://Abilities/spikes/spike-cursor.png")
-const SPIKE = preload("res://Abilities/spikes/spike.tscn")
+const SPIKE_CURSOR = preload("res://abilities/spikes/spike-cursor.png")
+const SPIKE = preload("res://abilities/spikes/spike.tscn")
 var cursor : Sprite2D
 @onready var ability_duration_timer: Timer = $AbilityDuration
 @onready var spawn_interval_timer: Timer = $SpawnInterval

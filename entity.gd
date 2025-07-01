@@ -1,19 +1,20 @@
 class_name Entity
 extends Area2D
 
-@export var MOVE_SPEED := 3.0
+@export var MOVE_SPEED := 200.0
 var velocity := Vector2.ZERO
 var stunned := false
 @onready var sprite: Sprite2D = $Sprite
 
-func move(direction: Vector2) -> void:
-	velocity = direction * MOVE_SPEED
+func move(direction: Vector2, delta: float) -> void:
+	velocity = direction * MOVE_SPEED * delta
 	global_position += velocity
 
 func load_ability(ability_name: String) -> Node2D:
-	var ability := load("res://Abilities/" + ability_name + '/' + ability_name + ".tscn")
+	var ability := load("res://abilities/" + ability_name + '/' + ability_name + ".tscn")
 	var ability_instance = ability.instantiate()
 	add_child(ability_instance)
+	ability_instance.user = self
 	return ability_instance
 
 func get_stunned(duration: float) -> void:

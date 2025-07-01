@@ -1,10 +1,12 @@
 [gd_scene load_steps=2 format=3 uid="uid://sf3hig334e6i"]
 
-[ext_resource type="Script" uid="uid://dpksxb7shk0if" path="res://Abilities/spikes/spikes.gd" id="2_3r71v"]
+[ext_resource type="Script" uid="uid://dpksxb7shk0if" path="res://abilities/spikes/spikes.gd" id="2_3r71v"]
 
 [node name="Spikes" type="Node2D"]
 script = ExtResource("2_3r71v")
+amount = null
 ability_duration = 1.0
+cursor_speed = null
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 10.0

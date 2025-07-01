@@ -2,7 +2,7 @@ class_name Ability
 extends Node2D
 
 @onready var cooldown: Timer = $Cooldown
-@onready var user: Entity = $"../"
+@onready var user: Entity
 
 enum State{
 	PRESSED,

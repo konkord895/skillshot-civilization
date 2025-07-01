@@ -1,8 +1,8 @@
 extends Ability
 
 @export var radius := 96.0 ## Radius in pixels
-@export var teleport_time := 0.25
-const SHADOW_DOMAIN = preload("res://Abilities/shadow_domain/shadow_domain.png")
+@export var teleport_time := 0.3
+const SHADOW_DOMAIN = preload("res://abilities/shadow_domain/shadow_domain.png")
 const MELT = preload("res://melt.gdshader")
 var domain: Sprite2D
 @onready var size := radius / 48
@@ -41,9 +41,9 @@ func _execute(target: Vector2, state: State):
 		tween.tween_method(func(value): shadow.material.set_shader_parameter("mix_value", value), 0.0, 1.0, 0.2)
 
 		user.sprite.material.shader = MELT
-		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("progress", value), 1.0, 0.0, 0.3)
-		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("mix_value", value), 1.0, 0.0, 0.7)
-		user.get_stunned(0.3)
+		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("progress", value), 1.0, 0.0, teleport_time)
+		tween.tween_method(func(value): user.sprite.material.set_shader_parameter("mix_value", value), 1.0, 0.0, teleport_time + 0.4)
+		user.get_stunned(teleport_time)
 		#endregion
 
 		var offset: Vector2
