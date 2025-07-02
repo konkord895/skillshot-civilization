@@ -32,14 +32,14 @@ script = ExtResource("1_0xbqg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -24)
 texture = ExtResource("2_4mqbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, 14)
 shape = SubResource("CircleShape2D_dl5ej")
 
 [node name="WarningParticles" type="GPUParticles2D" parent="."]
+position = Vector2(0, 14)
 emitting = false
 amount = 16
 texture = ExtResource("3_t38qj")
