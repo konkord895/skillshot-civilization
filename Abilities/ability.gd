@@ -1,6 +1,7 @@
 class_name Ability
 extends Node2D
 
+@export var ICON_TEXTURE: CompressedTexture2D
 @onready var cooldown: Timer = $Cooldown
 @onready var user: Entity
 

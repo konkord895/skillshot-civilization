@@ -5,7 +5,6 @@ extends Area2D
 @onready var delete_timer: Timer = $DeleteTimer
 @onready var activation_timer: Timer = $ActivationTimer
 
-
 func _ready() -> void:
 	warning_particles.emitting = true
 	activation_timer.start()

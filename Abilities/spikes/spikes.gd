@@ -15,9 +15,9 @@ func _execute(target: Vector2, state: State) -> void:
 		drawing = true
 
 	elif state == State.HELD and drawing:
-		if target != curve.get_point_position(curve.point_count - 1):
+		if target != curve.get_point_position(curve.point_count - 1): # To not add points at the same position
 			curve.add_point(target)
-		var curve_length = curve.get_baked_length()
+		var curve_length := curve.get_baked_length()
 		if curve_length >= 48*len(ghosts) and len(ghosts) < amount: # Add a ghost 
 			var ghost = Sprite2D.new()
 			ghost.texture = SPIKE_TEXTURE
@@ -28,7 +28,8 @@ func _execute(target: Vector2, state: State) -> void:
 		for i in range(amount): # Set the ghosts' positions
 			if i > len(ghosts)-1: # If there is less ghosts then the final amount
 				break
-			var offset = curve_length/(amount-1) * i
+			var ghosts_amount = clamp(len(ghosts) - 1, 1, amount) # So that it doesn't divide by zero
+			var offset = curve_length/(ghosts_amount) * i
 			ghosts[i].global_position = curve.sample_baked(offset) + Vector2(0.0, -14.0)
 
 	elif state == State.RELEASED and drawing: # Spawn spikes
