@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://lb7md60bxhck"]
 
-[ext_resource type="Script" uid="uid://beh3h0g4x1tdv" path="res://Abilities/spikes/spike.gd" id="1_0xbqg"]
+[ext_resource type="Script" path="res://Abilities/spikes/spike.gd" id="1_0xbqg"]
 [ext_resource type="Texture2D" uid="uid://reu662es46mq" path="res://Abilities/spikes/spikes.png" id="2_4mqbd"]
 [ext_resource type="Texture2D" uid="uid://da1dmq0lufcyp" path="res://Abilities/spikes/earth_particle.png" id="3_t38qj"]
 

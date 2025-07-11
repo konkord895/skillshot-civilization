@@ -10,4 +10,7 @@ wait_time = 4.122
 one_shot = true
 
 [node name="Act" type="Timer" parent="."]
-wait_time = 0.438
+wait_time = 1.126
+one_shot = true
+
+[connection signal="timeout" from="Act" to="." method="_on_act_timeout"]
