@@ -1,20 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://sf3hig334e6i"]
+[gd_scene load_steps=3 format=3 uid="uid://sf3hig334e6i"]
 
-[ext_resource type="Script" uid="uid://dpksxb7shk0if" path="res://Abilities/spikes/spikes.gd" id="2_3r71v"]
+[ext_resource type="Script" uid="uid://dpksxb7shk0if" path="res://abilities/spikes/spikes.gd" id="2_3r71v"]
+[ext_resource type="Texture2D" uid="uid://cnrxb0rup2oh" path="res://abilities/spikes/spikes_icon.png" id="2_x3hq2"]
 
 [node name="Spikes" type="Node2D"]
 script = ExtResource("2_3r71v")
-ability_duration = 1.0
+amount = null
+ICON_TEXTURE = ExtResource("2_x3hq2")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
-
-[node name="AbilityDuration" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
-[node name="SpawnInterval" type="Timer" parent="."]
-
-[connection signal="timeout" from="AbilityDuration" to="." method="_on_ability_duration_timeout"]
-[connection signal="timeout" from="SpawnInterval" to="." method="_spawn_spike"]

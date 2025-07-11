@@ -1,5 +1,5 @@
 extends Ability
-const FIREKILLER = preload("res://Abilities/small_firekiller/small_firekiller_projectile.tscn")
+const FIREKILLER = preload("res://abilities/small_firekiller/small_firekiller_projectile.tscn")
 
 func _execute(target: Vector2, state: State):
 	var fire_inst = FIREKILLER.instantiate()
