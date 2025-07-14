@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvxc6v1kwmyxq"]
 
-[ext_resource type="Script" uid="uid://c23x2mjdeurun" path="res://abilities/poison_bomb/poison.gd" id="1_ruhgg"]
-[ext_resource type="Texture2D" uid="uid://25abu1ejyq5l" path="res://abilities/poison_bomb/bomb.png" id="2_jlhml"]
+[ext_resource type="Script" uid="uid://c23x2mjdeurun" path="res://Abilities/poison_bomb/poison.gd" id="1_ruhgg"]
+[ext_resource type="Texture2D" uid="uid://25abu1ejyq5l" path="res://Abilities/poison_bomb/bomb.png" id="2_jlhml"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_osxtr"]
 radius = 35.0

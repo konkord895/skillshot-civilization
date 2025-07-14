@@ -6,18 +6,8 @@ const ICON = preload("res://abilities/icon.tscn")
 @onready var ability1 = load_ability("small_firekiller")
 @onready var ability2 = load_ability("spikes")
 @onready var ability3 = load_ability("shadow_domain")
-<<<<<<< HEAD
 @onready var ability4 = load_ability('mega_blast')
-
-@onready var abilities = {
-	1: ability1,
-	2: ability2,
-	3: ability3,
-	4: ability4
-}
-=======
-@onready var ability4 = load_ability("poison_bomb")
-
+#@onready var ability5 = load_ability("poison_bomb")
 @onready var abilities = [ability1, ability2, ability3, ability4]
 
 func _ready() -> void:
@@ -30,7 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if stunned:
 		return
->>>>>>> testK
+
 
 	var direction := Input.get_vector("left", "right", "up", "down")
 	move(direction, delta)

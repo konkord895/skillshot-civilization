@@ -3,7 +3,7 @@ extends Area2D
 var speed := 80.0
 var end_speed := 400
 var direction: Vector2
-var flying := false
+var flying := true
 var user: Entity
 
 func _ready() -> void:

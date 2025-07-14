@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2ya01fnbnyux"]
+[gd_scene load_steps=3 format=3 uid="uid://b2ya01fnbnyux"]
 
 [ext_resource type="Script" uid="uid://crylvsakvm5rg" path="res://Abilities/mega_blast/mega_blast.gd" id="1_8kx7b"]
+[ext_resource type="Texture2D" uid="uid://djjc7q6or4xpa" path="res://dwarf_m_idle_anim_f1.png" id="2_wkeok"]
 
 [node name="mega_blast" type="Node2D"]
 script = ExtResource("1_8kx7b")
+ICON_TEXTURE = ExtResource("2_wkeok")
 
 [node name="Cooldown" type="Timer" parent="."]
 wait_time = 11.924
