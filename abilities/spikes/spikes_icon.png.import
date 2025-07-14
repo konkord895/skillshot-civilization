@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cifgb1md3utem"
-path="res://.godot/imported/shadow_domain.png-ee8582cf1db779654cb30189030387a0.ctex"
+uid="uid://cnrxb0rup2oh"
+path="res://.godot/imported/spikes_icon.png-6a42ed8797c97fad6c82d48267bfb528.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/shadow_domain/shadow_domain.png"
-dest_files=["res://.godot/imported/shadow_domain.png-ee8582cf1db779654cb30189030387a0.ctex"]
+source_file="res://abilities/spikes/spikes_icon.png"
+dest_files=["res://.godot/imported/spikes_icon.png-6a42ed8797c97fad6c82d48267bfb528.ctex"]
 
 [params]
 

@@ -1,40 +1,48 @@
 extends Ability
 
 @export var amount := 3
-@export var ability_duration := 10.0
-@export var cursor_speed := 3.0
-const SPIKE_CURSOR = preload("res://Abilities/spikes/spike-cursor.png")
-const SPIKE = preload("res://Abilities/spikes/spike.tscn")
-var cursor : Sprite2D
-@onready var ability_duration_timer: Timer = $AbilityDuration
-@onready var spawn_interval_timer: Timer = $SpawnInterval
-
-
-func _ready() -> void:
-	ability_duration_timer.wait_time = ability_duration
-	spawn_interval_timer.wait_time = ability_duration_timer.wait_time / amount
+const SPIKE = preload("res://abilities/spikes/spike.tscn")
+const SPIKE_TEXTURE = preload("res://abilities/spikes/spikes.png")
+var curve : Curve2D
+var ghosts : Array[Sprite2D] = []
+var drawing := false
 
 
 func _execute(target: Vector2, state: State) -> void:
-	if ability_duration_timer.time_left == 0: # Create a cursor
-		cursor = Sprite2D.new()
-		cursor.texture = SPIKE_CURSOR
-		cursor.global_position = target
-		Projectiles.add_child(cursor)
-		ability_duration_timer.start()
-		spawn_interval_timer.start()
-		_spawn_spike()
+	if state == State.PRESSED:
+		curve = Curve2D.new()
+		curve.add_point(target)
+		drawing = true
 
-	else: # Make it move slowly towards the mouse
-		cursor.global_position = cursor.global_position.move_toward(target, cursor_speed) 
+	elif state == State.HELD and drawing:
+		if target != curve.get_point_position(curve.point_count - 1): # To not add points at the same position
+			curve.add_point(target)
+		var curve_length := curve.get_baked_length()
+		if curve_length >= 48*len(ghosts) and len(ghosts) < amount: # Add a ghost 
+			var ghost = Sprite2D.new()
+			ghost.texture = SPIKE_TEXTURE
+			ghost.modulate = Color(0.671, 1.0, 0.616, 0.635)
+			Projectiles.add_child(ghost)
+			ghosts.append(ghost)
+
+		for i in range(amount): # Set the ghosts' positions
+			if i > len(ghosts)-1: # If there is less ghosts then the final amount
+				break
+			var ghosts_amount = clamp(len(ghosts) - 1, 1, amount) # So that it doesn't divide by zero
+			var offset = curve_length/(ghosts_amount) * i
+			ghosts[i].global_position = curve.sample_baked(offset) + Vector2(0.0, -14.0)
+
+	elif state == State.RELEASED and drawing: # Spawn spikes
+		for ghost in ghosts:
+			_spawn_spike(ghost.global_position)
+			ghost.queue_free()
+		ghosts.clear()
+		curve.clear_points()
+		cooldown.start()
+		drawing = false
 
 
-func _on_ability_duration_timeout() -> void:
-	cooldown.start()
-	cursor.queue_free()
-	spawn_interval_timer.stop()
-
-func _spawn_spike() -> void: # Spawn spikes at equal intervals
+func _spawn_spike(coords: Vector2) -> void:
 	var spike = SPIKE.instantiate()
-	spike.global_position = cursor.global_position
+	spike.global_position = coords
 	Projectiles.add_child(spike)

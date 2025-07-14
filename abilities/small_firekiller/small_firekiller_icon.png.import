@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cifgb1md3utem"
-path="res://.godot/imported/shadow_domain.png-ee8582cf1db779654cb30189030387a0.ctex"
+uid="uid://cam7n8m8kolnu"
+path="res://.godot/imported/small_firekiller_icon.png-56f89d8fe1d37db1d5ede3228fc41950.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/shadow_domain/shadow_domain.png"
-dest_files=["res://.godot/imported/shadow_domain.png-ee8582cf1db779654cb30189030387a0.ctex"]
+source_file="res://abilities/small_firekiller/small_firekiller_icon.png"
+dest_files=["res://.godot/imported/small_firekiller_icon.png-56f89d8fe1d37db1d5ede3228fc41950.ctex"]
 
 [params]
 

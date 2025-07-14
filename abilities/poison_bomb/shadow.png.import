@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2iyyq0swq5ji"
-path="res://.godot/imported/spike-cursor.png-cdbc983001ad9ce734c43c4cd8a6e179.ctex"
+uid="uid://b817nj5po2lug"
+path="res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Abilities/spikes/spike-cursor.png"
-dest_files=["res://.godot/imported/spike-cursor.png-cdbc983001ad9ce734c43c4cd8a6e179.ctex"]
+source_file="res://abilities/poison_bomb/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"]
 
 [params]
 
