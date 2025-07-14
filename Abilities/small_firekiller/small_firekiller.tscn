@@ -9,3 +9,6 @@ ICON_TEXTURE = ExtResource("2_km0om")
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="AbilityDuration" type="Timer" parent="."]
+one_shot = true
