@@ -12,3 +12,5 @@ one_shot = true
 
 [node name="AbilityDuration" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="AbilityDuration" to="." method="_on_ability_duration_timeout"]
