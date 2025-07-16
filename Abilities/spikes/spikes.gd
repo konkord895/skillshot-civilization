@@ -5,16 +5,15 @@ const SPIKE = preload("res://abilities/spikes/spike.tscn")
 const SPIKE_TEXTURE = preload("res://abilities/spikes/spikes.png")
 var curve : Curve2D
 var ghosts : Array[Sprite2D] = []
-var drawing := false
 
 
 func _execute(target: Vector2, state: State) -> void:
 	if state == State.PRESSED:
+		executing = true
 		curve = Curve2D.new()
 		curve.add_point(target)
-		drawing = true
 
-	elif state == State.HELD and drawing:
+	elif state == State.HELD and executing:
 		if target != curve.get_point_position(curve.point_count - 1): # To not add points at the same position
 			curve.add_point(target)
 		var curve_length := curve.get_baked_length()
@@ -32,14 +31,14 @@ func _execute(target: Vector2, state: State) -> void:
 			var offset = curve_length/(ghosts_amount) * i
 			ghosts[i].global_position = curve.sample_baked(offset) + Vector2(0.0, -14.0)
 
-	elif state == State.RELEASED and drawing: # Spawn spikes
+	elif state == State.RELEASED and executing: # Spawn spikes
 		for ghost in ghosts:
 			_spawn_spike(ghost.global_position)
 			ghost.queue_free()
 		ghosts.clear()
 		curve.clear_points()
 		cooldown.start()
-		drawing = false
+		executing = false
 
 
 func _spawn_spike(coords: Vector2) -> void:

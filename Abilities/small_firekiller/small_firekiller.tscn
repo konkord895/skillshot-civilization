@@ -8,4 +8,10 @@ script = ExtResource("2_6ef0d")
 ICON_TEXTURE = ExtResource("2_km0om")
 
 [node name="Cooldown" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
+
+[node name="AbilityDuration" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="AbilityDuration" to="." method="shoot"]
