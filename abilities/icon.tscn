@@ -1,19 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://brjv5bcthynd0"]
+[gd_scene load_steps=7 format=3 uid="uid://brjv5bcthynd0"]
 
 [ext_resource type="Texture2D" uid="uid://bvdn7lavluuww" path="res://abilities/shadow_domain/shadow_domain_icon.png" id="1_8rr6i"]
 [ext_resource type="Script" uid="uid://82buivc31gwh" path="res://abilities/icon.gd" id="2_a8ech"]
+[ext_resource type="Texture2D" uid="uid://5yf8eu26w32g" path="res://black.png" id="3_g178p"]
 [ext_resource type="Texture2D" uid="uid://cmdbke53gbbb" path="res://white.png" id="3_sdw5h"]
+[ext_resource type="Shader" uid="uid://i2b2cpoxlec4" path="res://shaders/icon.gdshader" id="4_a8ech"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8ech"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdw5h"]
+shader = ExtResource("4_a8ech")
+shader_parameter/color = Color(0.53073, 0.54872, 0.566406, 1)
+shader_parameter/inner_stroke_thickness = 1.0
+shader_parameter/inner_stroke_opacity = 1.0
+shader_parameter/inside_opacity = 0.0
+shader_parameter/frequency = 8.0
+shader_parameter/phase_speed = 1.0
 
 [node name="Icon" type="TextureRect"]
-material = SubResource("ShaderMaterial_a8ech")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_8rr6i")
 script = ExtResource("2_a8ech")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="CooldownVisual" type="TextureProgressBar" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +29,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 step = 0.01
+value = 75.0
 fill_mode = 5
 nine_patch_stretch = true
-texture_progress = ExtResource("3_sdw5h")
+texture_progress = ExtResource("3_g178p")
 tint_progress = Color(0.101563, 0.101563, 0.101563, 0.568627)
+
+[node name="DurationVisual" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_sdw5h")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sdw5h")

@@ -6,8 +6,10 @@ var fire_inst: Area2D
 @onready var ability_duration: Timer = $AbilityDuration
 
 func _execute(target: Vector2, state: State):
-	if state == State.PRESSED and ability_duration.time_left == 0: # Spawn projectile
+	if state == State.PRESSED and not executing: # Spawn projectile
+		executing = true
 		ability_duration.start()
+		user.speed_mul = 0.7
 		fire_inst = FIREKILLER.instantiate()
 		var to_target = global_position.direction_to(target)
 		if to_target:
@@ -18,14 +20,20 @@ func _execute(target: Vector2, state: State):
 		fire_inst.user = user
 		Projectiles.add_child(fire_inst)
 		ability_duration.start()
-	elif state == State.HELD and ability_duration.time_left != 0:
+		
+	elif state == State.HELD and executing: # Rotate toward target
 		var direction_to_target := global_position.direction_to(target)
 		var target_angle := direction_to_target.angle()
 		var angle = lerp_angle(fire_inst.rotation, target_angle, 0.15)
 		fire_inst.rotation = angle
 		fire_inst.direction = Vector2.RIGHT.rotated(angle)
+		
+	elif state == State.RELEASED and executing:
+		shoot()
+		ability_duration.stop()
 
-
-func _on_ability_duration_timeout() -> void:
+func shoot() -> void:
+	executing = false
 	fire_inst.flying = true
 	cooldown.start()
+	user.speed_mul = 1.0

@@ -10,8 +10,9 @@ func _ready() -> void:
 	ability_duration.wait_time += fly_time
 
 func _execute(target: Vector2, state: State) -> void:
-	if state != State.PRESSED or ability_duration.time_left != 0:
+	if state != State.PRESSED or executing:
 		return
+	executing = true
 	ability_duration.start()
 	var bomb = BOMB.instantiate()
 	bomb.global_position = global_position
@@ -25,5 +26,6 @@ func _execute(target: Vector2, state: State) -> void:
 
 
 func _on_ability_duration_timeout() -> void:
+	executing = false
 	poison.queue_free()
 	cooldown.start()
