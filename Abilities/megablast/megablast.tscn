@@ -1,16 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dprcmmqshqpxj"]
+[gd_scene load_steps=3 format=3 uid="uid://b2ya01fnbnyux"]
 
-[ext_resource type="Script" uid="uid://dhvmtq6kieijq" path="res://Abilities/megablast/megablast.gd" id="1_4fucw"]
+[ext_resource type="Script" uid="uid://crylvsakvm5rg" path="res://abilities/megablast/megablast.gd" id="1_8kx7b"]
+[ext_resource type="Texture2D" uid="uid://cnrjlgdmlk6b3" path="res://abilities/megablast/megablast.png" id="2_umsgn"]
 
-[node name="Megablast" type="Node2D"]
-script = ExtResource("1_4fucw")
+[node name="mega_blast" type="Node2D"]
+script = ExtResource("1_8kx7b")
+ICON_TEXTURE = ExtResource("2_umsgn")
 
 [node name="Cooldown" type="Timer" parent="."]
+wait_time = 11.924
 one_shot = true
 
-[node name="Destoy" type="Timer" parent="."]
-wait_time = 2.0
+[node name="Act" type="Timer" parent="."]
+wait_time = 0.438
 one_shot = true
-autostart = true
 
-[connection signal="timeout" from="Destoy" to="." method="_on_destoy_timeout"]
+[connection signal="timeout" from="Act" to="." method="_on_act_timeout"]

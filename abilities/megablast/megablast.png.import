@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqo5trxl25ddl"
-path="res://.godot/imported/dspikewaitred.png-97586857a1979b7c825646cf98c36a4c.ctex"
+uid="uid://cnrjlgdmlk6b3"
+path="res://.godot/imported/megablast.png-b31ac5aa97d4ae74112d79ef45ac9a24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Abilities/spikes/anime/dpike/dspikewaitred.png"
-dest_files=["res://.godot/imported/dspikewaitred.png-97586857a1979b7c825646cf98c36a4c.ctex"]
+source_file="res://abilities/megablast/megablast.png"
+dest_files=["res://.godot/imported/megablast.png-b31ac5aa97d4ae74112d79ef45ac9a24.ctex"]
 
 [params]
 

@@ -24,12 +24,13 @@ shape = SubResource("CircleShape2D_hqtel")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Container" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.898
+anchor_right = 0.576
 anchor_bottom = 1.0
 offset_left = 2.0
-offset_top = -66.0
-offset_right = 333.0
+offset_top = 0.0959473
+offset_right = -330.552
 offset_bottom = -34.0
 grow_vertical = 0
 scale = Vector2(2, 2)
