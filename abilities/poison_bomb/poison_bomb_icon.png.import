@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdwygywqru0mv"
-path="res://.godot/imported/poison_bomb_icon.png-b2c2fb9b801abce810c6c9900c782bbc.ctex"
+path="res://.godot/imported/poison_bomb_icon.png-b35c7d94e1d5b608c41967f1b61daeee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/poison_bomb/poison_bomb_icon.png"
-dest_files=["res://.godot/imported/poison_bomb_icon.png-b2c2fb9b801abce810c6c9900c782bbc.ctex"]
+source_file="res://Abilities/poison_bomb/poison_bomb_icon.png"
+dest_files=["res://.godot/imported/poison_bomb_icon.png-b35c7d94e1d5b608c41967f1b61daeee.ctex"]
 
 [params]
 

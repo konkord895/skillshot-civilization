@@ -10,6 +10,7 @@ var speed_mul := 1.0
 func move(direction: Vector2, delta: float) -> void:
 	velocity = direction * MOVE_SPEED * speed_mul * delta
 	global_position += velocity
+	
 
 func load_ability(ability_name: String) -> Node2D:
 	var ability := load("res://abilities/" + ability_name + '/' + ability_name + ".tscn")
