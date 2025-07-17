@@ -1,15 +1,14 @@
 extends Area2D
 
 @export var speed := 250.0
-@export var rotation_speed := 0.5
 var direction: Vector2
 var flying := false
 var user: Entity
 var target: Vector2
 
+
 func _ready() -> void:
 	rotation = direction.angle()
-	
 
 
 func _process(delta: float) -> void:
@@ -17,3 +16,12 @@ func _process(delta: float) -> void:
 		global_position += delta * speed * direction
 	else:
 		global_position = user.global_position
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Entity and area != user:
+		area.take_damage()
+
+
+func _on_delete_timeout() -> void:
+	queue_free()

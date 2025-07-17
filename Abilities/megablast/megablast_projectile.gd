@@ -1,13 +1,19 @@
 extends Area2D
-@onready var delet: Timer = $Delet
+
+var user: Entity
+@onready var delete: Timer = $Delete
 
 var direction := Vector2.ZERO
 
 func _ready() -> void:
 	rotation = direction.angle()
-	delet.start()
+	delete.start()
 
 
-func _on_delet_timeout() -> void:
+func _on_delete_timeout() -> void:
 	queue_free()
-	pass # Replace with function body.
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Entity and area != user:
+		area.take_damage()

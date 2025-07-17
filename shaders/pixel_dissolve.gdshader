@@ -12,5 +12,7 @@ float random (vec2 uv) {
 void fragment() {
 	vec2 uv = UV * pixel_size;
 	vec2 ipos = floor(uv);
-	COLOR.a = step(progress, random(ipos));
+	if (COLOR.a != 0.0){
+		COLOR.a = step(progress, random(ipos));
+	}
 }

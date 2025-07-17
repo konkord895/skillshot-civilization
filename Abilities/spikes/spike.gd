@@ -1,5 +1,6 @@
 extends Area2D
 
+var user: Entity
 @onready var warning_particles: GPUParticles2D = $WarningParticles
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var delete_timer: Timer = $DeleteTimer
@@ -18,3 +19,8 @@ func _ready() -> void:
 
 func _delete() -> void:
 	queue_free()
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area is Entity and area != user:
+		area.take_damage()
