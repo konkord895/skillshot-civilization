@@ -38,7 +38,7 @@ grow_vertical = 0
 scale = Vector2(2, 2)
 
 [node name="Tictime" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.106
 autostart = true
 
 [connection signal="timeout" from="Tictime" to="." method="_on_tictime_timeout"]
