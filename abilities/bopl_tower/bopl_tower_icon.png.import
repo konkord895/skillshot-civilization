@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b817nj5po2lug"
-path="res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"
+uid="uid://lpl7c6ccln0x"
+path="res://.godot/imported/bopl_tower_icon.png-a55351744b96407a0ebaab7929530c6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/poison_bomb/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"]
+source_file="res://abilities/bopl_tower/bopl_tower_icon.png"
+dest_files=["res://.godot/imported/bopl_tower_icon.png-a55351744b96407a0ebaab7929530c6e.ctex"]
 
 [params]
 

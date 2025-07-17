@@ -1,8 +1,17 @@
 extends TextureRect
 
+var ability: Ability
+@onready var cooldown_visual: TextureProgressBar = $CooldownVisual
+@onready var duration_visual: TextureRect = $DurationVisual
 
-@onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
-var cooldown: Timer
+
+func _ready() -> void:
+	texture = ability.ICON_TEXTURE
+
 
 func _process(delta: float) -> void:
-	texture_progress_bar.value = cooldown.time_left/cooldown.wait_time * 100.0
+	cooldown_visual.value = ability.cooldown.time_left/ability.cooldown.wait_time * 100.0
+	if ability.executing:
+		duration_visual.visible = true
+	else:
+		duration_visual.visible = false

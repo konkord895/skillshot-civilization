@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b817nj5po2lug"
-path="res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"
+uid="uid://cnrjlgdmlk6b3"
+path="res://.godot/imported/megablast.png-b31ac5aa97d4ae74112d79ef45ac9a24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/poison_bomb/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"]
+source_file="res://abilities/megablast/megablast.png"
+dest_files=["res://.godot/imported/megablast.png-b31ac5aa97d4ae74112d79ef45ac9a24.ctex"]
 
 [params]
 

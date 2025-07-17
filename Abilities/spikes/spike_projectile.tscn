@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8cx383wwfgwf"]
+
+[ext_resource type="Script" uid="uid://cya4nkye2tkgo" path="res://Abilities/spikes/spike_projectile.gd" id="1_q47ub"]
+[ext_resource type="Texture2D" uid="uid://c7okrsrnpqf8x" path="res://Abilities/spikes/anime/spike/long_metal_spike_04.png" id="2_uy0ar"]
+[ext_resource type="Texture2D" uid="uid://1llgrj1qxn01" path="res://Abilities/spikes/anime/dpike/dspikeyellow.png" id="3_3nfbb"]
+[ext_resource type="Texture2D" uid="uid://62g1bdnnqsa7" path="res://Abilities/spikes/anime/dpike/dspikeorng.png" id="4_uqnuc"]
+[ext_resource type="Texture2D" uid="uid://cqo5trxl25ddl" path="res://Abilities/spikes/anime/dpike/dspikewaitred.png" id="5_jpw81"]
+[ext_resource type="Texture2D" uid="uid://b7vojex5y1wk4" path="res://Abilities/spikes/anime/dpike/dspikered.png" id="6_c1x3s"]
+[ext_resource type="Texture2D" uid="uid://ch3h5dn6el8t3" path="res://Abilities/spikes/anime/spike/long_metal_spike_01.png" id="7_eljwv"]
+[ext_resource type="Texture2D" uid="uid://b6w67sqhkpm4j" path="res://Abilities/spikes/anime/spike/long_metal_spike_02.png" id="8_6wa6p"]
+[ext_resource type="Texture2D" uid="uid://c6o3a7tyncv8d" path="res://Abilities/spikes/anime/spike/long_metal_spike_03.png" id="9_40t0e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1fqa3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uy0ar")
+}],
+"loop": true,
+"name": &"destroed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3nfbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uqnuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jpw81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c1x3s")
+}],
+"loop": true,
+"name": &"dspike",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_eljwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6wa6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_40t0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_uy0ar")
+}],
+"loop": true,
+"name": &"spike",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uy0ar")
+}],
+"loop": true,
+"name": &"stena_spike",
+"speed": 5.0
+}]
+
+[node name="SpikeProjectile" type="Area2D"]
+script = ExtResource("1_q47ub")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3.8147e-06, -9.32051)
+scale = Vector2(0.282051, 0.44275)
+sprite_frames = SubResource("SpriteFrames_1fqa3")
+animation = &"dspike"
+speed_scale = 3.0

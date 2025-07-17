@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b817nj5po2lug"
-path="res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"
+uid="uid://5yf8eu26w32g"
+path="res://.godot/imported/black.png-19a8df0b1a4edb74ea2eecb66d46d03d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://abilities/poison_bomb/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-4d73f2958778435377ee0ce53949a16a.ctex"]
+source_file="res://black.png"
+dest_files=["res://.godot/imported/black.png-19a8df0b1a4edb74ea2eecb66d46d03d.ctex"]
 
 [params]
 

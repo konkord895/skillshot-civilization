@@ -1,6 +1,6 @@
 extends Ability
-const MEGABLAST = preload("res://Abilities/mega_blast/mega_blast_projectile.tscn")
 
+const MEGABLAST = preload("res://abilities/megablast/megablast_projectile.tscn")
 @onready var act: Timer = $Act
 
 

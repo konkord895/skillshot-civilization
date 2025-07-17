@@ -1,19 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cq4lpiawuommj"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://buiail2pmwwtm" path="res://Abilities/small_firekiller/small_firekiller.gd" id="2_6ef0d"]
-[ext_resource type="Texture2D" uid="uid://cam7n8m8kolnu" path="res://Abilities/small_firekiller/small_firekiller_icon.png" id="2_km0om"]
-=======
 [ext_resource type="Script" uid="uid://buiail2pmwwtm" path="res://abilities/small_firekiller/small_firekiller.gd" id="2_6ef0d"]
 [ext_resource type="Texture2D" uid="uid://cam7n8m8kolnu" path="res://abilities/small_firekiller/small_firekiller_icon.png" id="2_km0om"]
->>>>>>> testK
 
 [node name="SmallFirekiller" type="Node2D"]
 script = ExtResource("2_6ef0d")
 ICON_TEXTURE = ExtResource("2_km0om")
 
 [node name="Cooldown" type="Timer" parent="."]
+wait_time = 3.0
 one_shot = true
 
 [node name="AbilityDuration" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="AbilityDuration" to="." method="shoot"]

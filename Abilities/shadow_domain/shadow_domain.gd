@@ -3,48 +3,28 @@ extends Ability
 @export var radius := 96.0 ## Radius in pixels
 @export var teleport_time := 0.3
 const SHADOW_DOMAIN = preload("res://abilities/shadow_domain/shadow_domain.png")
-const MELT = preload("res://melt.gdshader")
+const MELT = preload("res://shaders/melt.gdshader")
 var domain: Sprite2D
 @onready var size := radius / 48
 @onready var ability_duration: Timer = $AbilityDuration
-<<<<<<< HEAD
-
 @onready var tp_cooldown: Timer = $TeleportCooldown
 
-
-=======
-@onready var tp_cooldown: Timer = $TeleportCooldown
-
->>>>>>> testK
 
 func _execute(target: Vector2, state: State):
 	if state != State.PRESSED:
 		return
-		
-	if ability_duration.time_left == 0: # Spawn a texture
-<<<<<<< HEAD
 
-=======
-		target = global_position
->>>>>>> testK
+	if not executing: # Spawn a texture
+		executing = true
 		ability_duration.start()
 		domain = Sprite2D.new()
 		domain.texture = SHADOW_DOMAIN
-		domain.global_position = target
+		domain.global_position = global_position
 		domain.scale = Vector2.ZERO
 		Projectiles.add_child(domain)
 		var tween = create_tween()
 		tween.tween_property(domain, "scale", Vector2(size, size), 0.25)
 
-<<<<<<< HEAD
-	#else: # Teleport
-		#user.monitorable = false
-		#user.global_position = target
-		
-
-
-=======
->>>>>>> testK
 	elif global_position.distance_to(domain.global_position) <= radius and tp_cooldown.time_left == 0: # Teleport
 		tp_cooldown.start()
 		#region Animation
@@ -71,6 +51,7 @@ func _execute(target: Vector2, state: State):
 		user.global_position = domain.global_position + offset
 
 func _on_ability_duration_timeout() -> void:
+	executing = false
 	cooldown.start()
 	var tween = create_tween()
 	tween.tween_property(domain, "scale", Vector2(0.0, 0.0), 0.25)
