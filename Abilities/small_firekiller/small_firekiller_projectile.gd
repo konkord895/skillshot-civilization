@@ -5,10 +5,15 @@ var direction: Vector2
 var flying := false
 var user: Entity
 var target: Vector2
+@onready var nav_obst: NavigationObstacle2D = $NavigationObstacle2D
+@onready var remote: RemoteTransform2D = $RemoteTransform2D
 
 
 func _ready() -> void:
 	rotation = direction.angle()
+	remove_child(nav_obst)
+	Game.battle_region.add_child(nav_obst)
+	remote.remote_path = nav_obst.get_path()
 
 
 func _process(delta: float) -> void:

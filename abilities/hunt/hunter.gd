@@ -4,6 +4,7 @@ const SPEED := 150.0
 var prey: Node2D
 var hunting = false
 var overlapping: Area2D = null
+var user: Entity
 @onready var sprite: Sprite2D = $Sprite
 
 
@@ -12,6 +13,7 @@ func _ready() -> void:
 	tween.tween_method(func(value): sprite.material.set_shader_parameter("progress", value), 1.0, 0.0, 0.5)
 	await tween.finished
 	hunting = true
+	monitoring = true
 
 
 func _process(delta: float) -> void:
@@ -29,7 +31,7 @@ func die() -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area is Entity:
+	if area is Entity and area != user:
 		overlapping = area
 
 
