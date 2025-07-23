@@ -3,6 +3,9 @@ extends Entity
 
 var target: Vector2
 var rng := RandomNumberGenerator.new()
+
+@onready var ability1 = load_ability("small_firekiller")
+@onready var player_pos = get_tree().get_first_node_in_group("player").global_position
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 
 func _ready() -> void:
