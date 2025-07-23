@@ -4,7 +4,6 @@ const PLAYER = preload("res://player.tscn")
 
 var player : Entity
 var direction : Vector2
-var new_direction = Vector2(0,1)
 var rng = RandomNumberGenerator.new()
 
 
