@@ -17,7 +17,7 @@ func _execute(target: Vector2, state: State) -> void:
 		if target != curve.get_point_position(curve.point_count - 1): # To not add points at the same position
 			curve.add_point(target)
 		var curve_length := curve.get_baked_length()
-		if curve_length >= 48*len(ghosts) and len(ghosts) < amount: # Add a ghost 
+		if curve_length >= 32*len(ghosts) and len(ghosts) < amount: # Add a ghost 
 			var ghost = Sprite2D.new()
 			ghost.texture = SPIKE_TEXTURE
 			ghost.modulate = Color(0.671, 1.0, 0.616, 0.635)

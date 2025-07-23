@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1pd6rtv4pmpk"]
+[gd_scene load_steps=5 format=3 uid="uid://b1pd6rtv4pmpk"]
 
+[ext_resource type="Script" uid="uid://632gvqb2kjak" path="res://test.gd" id="1_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://kvr4xyhnq64j" path="res://player.tscn" id="1_37kl0"]
 [ext_resource type="PackedScene" uid="uid://bomf3mh1nowr8" path="res://enemy.tscn" id="2_8uh7m"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8uh7m"]
+vertices = PackedVector2Array(161.406, 76.9219, -156.563, 76.0703, -159.43, -74.2266, 163.57, -76.7578)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-190, -104, 194, -107, 191, 107, -186, 106)])
+agent_radius = 30.0
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_6uqi0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -13,3 +21,6 @@ position = Vector2(-4, 28)
 
 [node name="Enemy" parent="." groups=["challenger"] instance=ExtResource("2_8uh7m")]
 position = Vector2(-2, -35)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_8uh7m")

@@ -13,7 +13,7 @@ func _execute(target: Vector2, state: State) -> void:
 		ability_duration.start()
 		tower = Sprite2D.new()
 		tower.texture = TOWER
-		tower.global_position = target
+		tower.global_position = global_position
 		Projectiles.add_child(tower)
 		
 		lightning = LIGHTNING.instantiate()

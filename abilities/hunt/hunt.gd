@@ -9,7 +9,9 @@ func _execute(target: Vector2, state: State):
 		executing = true
 		ability_duration.start()
 		hunter = HUNTER.instantiate()
-		hunter.global_position = target
+		var offset = target - global_position
+		hunter.global_position = global_position + offset.limit_length(50.0)
+		hunter.user = user
 		var challengers = get_tree().get_nodes_in_group("challenger")
 		for challenger in challengers:
 			if challenger != user:
