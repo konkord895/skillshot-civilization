@@ -17,11 +17,5 @@ func _physics_process(delta: float) -> void:
 func _on_tictime_timeout() -> void:
 	var player_dist = player.global_position - global_position
 	
-	#не идет к игроку при таком растоянии
-	if player_dist.length() <= 200:
-		new_direction = player_dist.normalized()
-	
-	#сближается и все еще видит его
-	elif player_dist.length() <= 400:
-		direction = player_dist.normalized()
+
 	
