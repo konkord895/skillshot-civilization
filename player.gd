@@ -4,7 +4,7 @@ const ICON = preload("res://abilities/icon.tscn")
 
 @onready var container: HBoxContainer = $CanvasLayer/Container
 @onready var ability1 = load_ability("small_firekiller")
-@onready var ability2 = load_ability("megablast")
+@onready var ability2 = load_ability("hunt")
 @onready var ability3 = load_ability("shadow_domain")
 @onready var ability4 = load_ability("bopl_tower")
 

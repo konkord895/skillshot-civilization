@@ -33,7 +33,7 @@ func _execute(target: Vector2, state: State) -> void:
 
 	elif state == State.RELEASED and executing: # Spawn spikes
 		for ghost in ghosts:
-			_spawn_spike(ghost.global_position)
+			spawn_spike(ghost.global_position)
 			ghost.queue_free()
 		ghosts.clear()
 		curve.clear_points()
@@ -41,7 +41,8 @@ func _execute(target: Vector2, state: State) -> void:
 		executing = false
 
 
-func _spawn_spike(coords: Vector2) -> void:
+func spawn_spike(coords: Vector2) -> void:
 	var spike = SPIKE.instantiate()
 	spike.global_position = coords
+	spike.user = user
 	Projectiles.add_child(spike)

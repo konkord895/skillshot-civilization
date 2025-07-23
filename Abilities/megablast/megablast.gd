@@ -14,6 +14,7 @@ func _execute(target: Vector2, state : State):
 	mb_i.direction = global_position.direction_to(target)
 	mb_i.global_position = global_position
 	mb_i.modulate = Color(1, 1, 1, 0.1)
+	mb_i.user = user
 	Projectiles.add_child(mb_i)
 	
 	act.start()

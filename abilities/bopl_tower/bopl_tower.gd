@@ -19,6 +19,7 @@ func _execute(target: Vector2, state: State) -> void:
 		lightning = LIGHTNING.instantiate()
 		lightning.start_node = self
 		lightning.end_node = tower
+		lightning.user = user
 		Projectiles.add_child(lightning)
 
 

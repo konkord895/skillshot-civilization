@@ -9,7 +9,7 @@ func _execute(target: Vector2, state: State):
 	if state == State.PRESSED and not executing: # Spawn projectile
 		executing = true
 		ability_duration.start()
-		user.speed_mul = 0.7
+		user.effects.apply("firekiller", 0.7, true)
 		fire_inst = FIREKILLER.instantiate()
 		var to_target = global_position.direction_to(target)
 		if to_target:
@@ -33,7 +33,9 @@ func _execute(target: Vector2, state: State):
 		ability_duration.stop()
 
 func shoot() -> void:
+	user.effects.remove("firekiller")
 	executing = false
 	fire_inst.flying = true
+	fire_inst.monitoring = true
 	cooldown.start()
 	user.speed_mul = 1.0

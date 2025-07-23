@@ -26,7 +26,7 @@ gdscript/warnings/narrowing_conversion=0
 
 [global_group]
 
-player="player"
+challenger=""
 
 [input]
 
