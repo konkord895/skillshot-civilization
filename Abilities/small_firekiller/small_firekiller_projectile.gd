@@ -30,3 +30,4 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_delete_timeout() -> void:
 	queue_free()
+	nav_obst.queue_free()

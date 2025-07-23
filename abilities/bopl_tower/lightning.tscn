@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://2513n75r36fj"]
 
 [ext_resource type="Shader" uid="uid://dfr4dxdtb6nee" path="res://shaders/lightning.gdshader" id="1_njnl6"]
-[ext_resource type="Script" uid="uid://bagrlce7i6j5m" path="res://abilities/bopl_tower/lightning.gd" id="2_i3jr7"]
+[ext_resource type="Script" uid="uid://bagrlce7i6j5m" path="res://Abilities/bopl_tower/lightning.gd" id="2_i3jr7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dtc2u"]
 shader = ExtResource("1_njnl6")
@@ -86,7 +86,7 @@ _data = {
 &"start": SubResource("Animation_njnl6")
 }
 
-[node name="Area2D" type="Area2D"]
+[node name="Lightning" type="Area2D"]
 monitoring = false
 script = ExtResource("2_i3jr7")
 
@@ -103,5 +103,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_dtc2u")
 }
 autoplay = "start"
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+vertices = PackedVector2Array(-23, 5, 24, 5, 24, -5, -23, -5)
+affect_navigation_mesh = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

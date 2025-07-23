@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://632gvqb2kjak" path="res://test.gd" id="1_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://kvr4xyhnq64j" path="res://player.tscn" id="1_37kl0"]
-[ext_resource type="PackedScene" uid="uid://bomf3mh1nowr8" path="res://enemy.tscn" id="2_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://bomf3mh1nowr8" path="res://enemy/enemy.tscn" id="2_8uh7m"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8uh7m"]
 vertices = PackedVector2Array(161.406, 76.9219, -156.563, 76.0703, -159.43, -74.2266, 163.57, -76.7578)

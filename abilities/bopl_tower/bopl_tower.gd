@@ -29,3 +29,4 @@ func _on_ability_duration_timeout() -> void:
 	cooldown.start()
 	tower.queue_free()
 	lightning.queue_free()
+	lightning.nav_obst.queue_free()

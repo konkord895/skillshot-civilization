@@ -19,13 +19,17 @@ func _execute(target: Vector2, state: State) -> void:
 	bomb.target = target
 	bomb.fly_time = fly_time
 	Projectiles.add_child(bomb)
-	await get_tree().create_timer(fly_time).timeout
+	
 	poison = POISON.instantiate()
 	poison.global_position = target
 	Projectiles.add_child(poison)
+	await get_tree().create_timer(fly_time).timeout
+	poison.visible = true
+	poison.monitoring = true
 
 
 func _on_ability_duration_timeout() -> void:
 	executing = false
 	poison.queue_free()
+	poison.nav_obst.queue_free()
 	cooldown.start()

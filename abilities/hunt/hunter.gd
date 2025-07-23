@@ -6,6 +6,8 @@ var hunting = false
 var overlapping: Area2D = null
 var user: Entity
 @onready var sprite: Sprite2D = $Sprite
+@onready var nav_obst: NavigationObstacle2D = $NavigationObstacle2D
+@onready var remote: RemoteTransform2D = $RemoteTransform2D
 
 
 func _ready() -> void:
@@ -14,6 +16,10 @@ func _ready() -> void:
 	await tween.finished
 	hunting = true
 	monitoring = true
+	
+	remove_child(nav_obst)
+	Game.battle_region.add_child(nav_obst)
+	remote.remote_path = nav_obst.get_path()
 
 
 func _process(delta: float) -> void:
@@ -28,6 +34,8 @@ func die() -> void:
 	tween.tween_method(func(value): sprite.material.set_shader_parameter("progress", value), 0.0, 1.0, 0.5)
 	await tween.finished
 	queue_free()
+	nav_obst.queue_free()
+	
 
 
 func _on_area_entered(area: Area2D) -> void:

@@ -11,7 +11,7 @@ func _ready() -> void:
 	target = global_position + get_random()
 	
 func _physics_process(delta: float) -> void:
-	#if NavigationServer2D.map_get_iteration_id(Game.map):
+	#if NavigdwationServer2D.map_get_iteration_id(Game.map):
 		#target = NavigationServer2D.map_get_closest_point(Game.map, global_position)
 	#if not Geometry2D.is_point_in_polygon(global_position, Game.battle_map.navigation_polygon.get_vertices()):
 	if nav_agent.is_navigation_finished():

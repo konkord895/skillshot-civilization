@@ -5,6 +5,13 @@ var end_node: Node2D
 var user: Entity
 @onready var lightning: Sprite2D = $Lightning
 
+@onready var nav_obst: NavigationObstacle2D = $NavigationObstacle2D
+@onready var remote: RemoteTransform2D = $RemoteTransform2D
+
+func _ready() -> void:
+	remove_child(nav_obst)
+	Game.battle_region.add_child(nav_obst)
+	remote.remote_path = nav_obst.get_path()
 
 func _process(delta: float) -> void:
 	var start_coords = start_node.global_position
