@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1pd6rtv4pmpk"]
+[gd_scene load_steps=7 format=3 uid="uid://b1pd6rtv4pmpk"]
 
 [ext_resource type="Script" uid="uid://632gvqb2kjak" path="res://test.gd" id="1_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://kvr4xyhnq64j" path="res://entities/player/player.tscn" id="1_37kl0"]
-[ext_resource type="PackedScene" uid="uid://bomf3mh1nowr8" path="res://entities/enemy/enemy.tscn" id="2_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://bomf3mh1nowr8" path="res://entities/enemy/forus/forus.tscn" id="2_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://cjc1l4l1mppho" path="res://entities/enemy/golem/golem.tscn" id="4_ppyta"]
+[ext_resource type="PackedScene" uid="uid://csj7d4136appc" path="res://entities/enemy/bobl/bobl.tscn" id="5_ykrsh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8uh7m"]
 vertices = PackedVector2Array(162, 78, -162, 78, -162, -78, 162, -78)
@@ -10,8 +12,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-192, -108, 192, -108, 192, 108, -192, 108)])
 agent_radius = 30.0
 
-[node name="Test" type="NavigationRegion2D"]
-navigation_polygon = SubResource("NavigationPolygon_8uh7m")
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_6uqi0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -22,3 +23,10 @@ position = Vector2(-4, 28)
 
 [node name="Enemy" parent="." groups=["challenger"] instance=ExtResource("2_8uh7m")]
 position = Vector2(-2, -35)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_8uh7m")
+
+[node name="Golem" parent="." instance=ExtResource("4_ppyta")]
+
+[node name="Bobl" parent="." instance=ExtResource("5_ykrsh")]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://befakqdpo1acv"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" path="res://dwarf_m_idle_anim_f1.png" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://boaw3d0go5n7q" path="res://effects.gd" id="3_i3pqv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 6.08276
+
+[node name="Player" type="Area2D" groups=["player"]]
+script = ExtResource("1_onrkg")
+MOVE_SPEED = 120.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_i3pqv")
+position = Vector2(-1, -7)
+texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_hqtel")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Container" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.898
+anchor_right = 0.576
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 0.0959473
+offset_right = -330.552
+offset_bottom = -34.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+
+[node name="Effects" type="Node" parent="."]
+script = ExtResource("3_i3pqv")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+radius = 30.0
+affect_navigation_mesh = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

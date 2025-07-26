@@ -1,18 +1,17 @@
 [gd_scene load_steps=5 format=3 uid="uid://bomf3mh1nowr8"]
 
 [ext_resource type="Texture2D" uid="uid://xieubl8pvbio" path="res://entities/enemy/imp_idle_anim_f0.png" id="1_7k104"]
-[ext_resource type="Script" uid="uid://bphc41pb662pk" path="res://entities/enemy/enemy.gd" id="1_qi2p4"]
+[ext_resource type="Script" uid="uid://d2l7pconsphjf" path="res://entities/enemy/forus/forus.gd" id="1_nwqej"]
 [ext_resource type="Script" uid="uid://boaw3d0go5n7q" path="res://effects.gd" id="3_qi2p4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 6.0
 
-[node name="Enemy" type="Area2D"]
-z_index = 1
-script = ExtResource("1_qi2p4")
-MOVE_SPEED = 100.0
+[node name="Forus" type="Area2D"]
+script = ExtResource("1_nwqej")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(0.36, 0.25512, 0.1944, 1)
 position = Vector2(-1, -2)
 texture = ExtResource("1_7k104")
 
@@ -23,3 +22,11 @@ shape = SubResource("CircleShape2D_4gyqm")
 script = ExtResource("3_qi2p4")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timertoattack" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[node name="Timertoheld" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timertoattack" to="." method="_on_timertoattack_timeout"]
