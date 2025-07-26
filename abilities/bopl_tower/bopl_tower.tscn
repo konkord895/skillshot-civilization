@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dk37jv67axf2q"]
 
-[ext_resource type="Script" uid="uid://c8bf8qxxn88j7" path="res://Abilities/bopl_tower/bopl_tower.gd" id="1_les5r"]
-[ext_resource type="Texture2D" uid="uid://lpl7c6ccln0x" path="res://Abilities/bopl_tower/bopl_tower_icon.png" id="2_5u00q"]
+[ext_resource type="Script" uid="uid://c8bf8qxxn88j7" path="res://abilities/bopl_tower/bopl_tower.gd" id="1_les5r"]
+[ext_resource type="Texture2D" uid="uid://lpl7c6ccln0x" path="res://abilities/bopl_tower/bopl_tower_icon.png" id="2_5u00q"]
 
 [node name="BoplTower" type="Node2D"]
 script = ExtResource("1_les5r")

@@ -49,6 +49,10 @@ func _execute(target: Vector2, state: State):
 		var offset: Vector2
 		offset = domain.to_local(target).limit_length(radius*0.9)
 		user.global_position = domain.global_position + offset
+		
+		await tween.finished
+		shadow.queue_free()
+
 
 func _on_ability_duration_timeout() -> void:
 	executing = false

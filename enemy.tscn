@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bomf3mh1nowr8"]
+[gd_scene load_steps=5 format=3 uid="uid://uj6ypqhoto5r"]
 
-[ext_resource type="Texture2D" uid="uid://xieubl8pvbio" path="res://imp_idle_anim_f0.png" id="1_7k104"]
-[ext_resource type="Script" uid="uid://bphc41pb662pk" path="res://enemy/enemy.gd" id="1_qi2p4"]
-[ext_resource type="Script" uid="uid://boaw3d0go5n7q" path="res://effects.gd" id="3_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://xieubl8pvbio" path="res://entities/enemy/imp_idle_anim_f0.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://bphc41pb662pk" path="res://entities/enemy/enemy.gd" id="1_qi2p4"]
+[ext_resource type="Script" path="res://effects.gd" id="3_qi2p4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 6.0
