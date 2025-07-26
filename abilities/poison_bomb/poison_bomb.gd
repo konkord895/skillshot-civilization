@@ -30,6 +30,5 @@ func _execute(target: Vector2, state: State) -> void:
 
 func _on_ability_duration_timeout() -> void:
 	executing = false
-	poison.queue_free()
-	poison.nav_obst.queue_free()
+	poison.delete()
 	cooldown.start()

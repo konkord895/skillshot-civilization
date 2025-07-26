@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cifgb1md3utem"
-path="res://.godot/imported/shadow_domain.png-15ef7e806cb7341283458689609d41b7.ctex"
+path="res://.godot/imported/shadow_domain.png-ee8582cf1db779654cb30189030387a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Abilities/shadow_domain/shadow_domain.png"
-dest_files=["res://.godot/imported/shadow_domain.png-15ef7e806cb7341283458689609d41b7.ctex"]
+source_file="res://abilities/shadow_domain/shadow_domain.png"
+dest_files=["res://.godot/imported/shadow_domain.png-ee8582cf1db779654cb30189030387a0.ctex"]
 
 [params]
 

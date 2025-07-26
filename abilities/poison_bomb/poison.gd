@@ -1,15 +1,11 @@
-extends Area2D
-@onready var nav_obst: NavigationObstacle2D = $NavigationObstacle2D
-@onready var remote: RemoteTransform2D = $RemoteTransform2D
-
+extends Projectile
 
 var entities_inside = []
+ 
 
 func _ready() -> void:
-	remove_child(nav_obst)
-	Game.battle_region.add_child(nav_obst)
-	remote.remote_path = nav_obst.get_path()
-	
+	init_nav()
+
 
 func _process(delta: float) -> void:
 	for entity in entities_inside:

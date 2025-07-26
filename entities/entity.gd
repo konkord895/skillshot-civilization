@@ -1,6 +1,7 @@
 class_name Entity
 extends Area2D
 
+signal got_stunned
 @export var MOVE_SPEED := 200.0
 var velocity := Vector2.ZERO
 var stunned := false
@@ -28,6 +29,7 @@ func take_damage() -> void:
 
 func get_stunned(duration: float) -> void:
 	if not stunned:
+		got_stunned.emit()
 		stunned = true
 		await get_tree().create_timer(duration).timeout
 		stunned = false

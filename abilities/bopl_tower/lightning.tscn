@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://2513n75r36fj"]
 
 [ext_resource type="Shader" uid="uid://dfr4dxdtb6nee" path="res://shaders/lightning.gdshader" id="1_njnl6"]
-[ext_resource type="Script" uid="uid://bagrlce7i6j5m" path="res://Abilities/bopl_tower/lightning.gd" id="2_i3jr7"]
+[ext_resource type="Script" uid="uid://bagrlce7i6j5m" path="res://abilities/bopl_tower/lightning.gd" id="2_i3jr7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dtc2u"]
 shader = ExtResource("1_njnl6")
@@ -30,7 +30,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Lightning:material:shader_parameter/alpha")
+tracks/0/path = NodePath("Sprite:material:shader_parameter/alpha")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +58,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Lightning:material:shader_parameter/alpha")
+tracks/0/path = NodePath("Sprite:material:shader_parameter/alpha")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -90,7 +90,7 @@ _data = {
 monitoring = false
 script = ExtResource("2_i3jr7")
 
-[node name="Lightning" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_dtc2u")
 texture = SubResource("NoiseTexture2D_3uq8i")
 

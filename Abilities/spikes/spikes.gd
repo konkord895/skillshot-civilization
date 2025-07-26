@@ -3,14 +3,18 @@ extends Ability
 @export var amount := 3
 const SPIKE = preload("res://abilities/spikes/spike.tscn")
 const SPIKE_TEXTURE = preload("res://abilities/spikes/spikes.png")
-var curve : Curve2D
+var curve := Curve2D.new()
 var ghosts : Array[Sprite2D] = []
+
+
+func _ready() -> void:
+	await get_tree().physics_frame
+	user.got_stunned.connect(clear)
 
 
 func _execute(target: Vector2, state: State) -> void:
 	if state == State.PRESSED:
 		executing = true
-		curve = Curve2D.new()
 		curve.add_point(target)
 
 	elif state == State.HELD and executing:
@@ -34,11 +38,16 @@ func _execute(target: Vector2, state: State) -> void:
 	elif state == State.RELEASED and executing: # Spawn spikes
 		for ghost in ghosts:
 			spawn_spike(ghost.global_position)
-			ghost.queue_free()
-		ghosts.clear()
-		curve.clear_points()
+		clear()
 		cooldown.start()
-		executing = false
+
+
+func clear() -> void:
+	for ghost in ghosts:
+		ghost.queue_free()
+	ghosts.clear()
+	curve.clear_points()
+	executing = false
 
 
 func spawn_spike(coords: Vector2) -> void:
