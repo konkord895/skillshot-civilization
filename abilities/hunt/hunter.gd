@@ -8,6 +8,7 @@ var overlapping: Area2D = null
 
 
 func _ready() -> void:
+	
 	var tween = create_tween()
 	tween.tween_method(func(value): sprite.material.set_shader_parameter("progress", value), 1.0, 0.0, 0.5)
 	await tween.finished

@@ -7,8 +7,9 @@ var target: Vector2
 
 
 func _ready() -> void:
+	super()
 	rotation = direction.angle()
-
+	
 
 func _process(delta: float) -> void:
 	if flying:

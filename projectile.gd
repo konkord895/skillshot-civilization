@@ -10,5 +10,6 @@ func _ready() -> void:
 	if not user.is_in_group("player"):
 		nav_obst.queue_free()
 
+
 func delete():
 	queue_free()

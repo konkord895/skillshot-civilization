@@ -7,6 +7,7 @@ extends Projectile
 
 
 func _ready() -> void:
+	super()
 	warning_particles.emitting = true
 	activation_timer.start()
 	await activation_timer.timeout

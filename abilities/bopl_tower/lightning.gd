@@ -2,7 +2,7 @@ extends Projectile
 
 var start_node: Node2D
 var end_node: Node2D
-@onready var lightning: Sprite2D = $Lightning
+@onready var lightning: Sprite2D = $Sprite
 
 
 func _process(delta: float) -> void:

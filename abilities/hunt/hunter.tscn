@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cld3oppm5vgvp"]
 
-[ext_resource type="Script" uid="uid://b6ugsbfl2bk7f" path="res://Abilities/hunt/hunter.gd" id="1_04sxf"]
+[ext_resource type="Script" uid="uid://b6ugsbfl2bk7f" path="res://abilities/hunt/hunter.gd" id="1_04sxf"]
 [ext_resource type="Shader" uid="uid://dwyd77uf3cj7c" path="res://shaders/melt.gdshader" id="2_04sxf"]
-[ext_resource type="Texture2D" uid="uid://b84uy88u43ov1" path="res://Abilities/hunt/slug_anim_f0.png" id="3_w0vv3"]
+[ext_resource type="Texture2D" uid="uid://b84uy88u43ov1" path="res://abilities/hunt/slug_anim_f0.png" id="3_w0vv3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_amyo8"]
 radius = 7.0
