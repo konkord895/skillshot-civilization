@@ -1,12 +1,11 @@
+class_name Enemy
 extends Entity
 
 
 var target: Vector2
 var rng := RandomNumberGenerator.new()
-
-@onready var ability1 = load_ability("small_firekiller")
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
-@onready var tfa: Timer = $TimerForAttack
+@onready var player_pos = get_tree().get_first_node_in_group("player").global_position
 
 func _ready() -> void:
 	nav_agent.avoidance_enabled = true
@@ -14,14 +13,9 @@ func _ready() -> void:
 	target = global_position + get_random()
 
 func _process(delta: float) -> void:
-	
-	var player_pos = get_tree().get_first_node_in_group("player").global_position	
-	
-	ability1.execute(player_pos, Ability.State.HELD)
-	
+	player_pos = get_tree().get_first_node_in_group("player").global_position
 
 func _physics_process(delta: float) -> void:
-
 	#if NavigdwationServer2D.map_get_iteration_id(Game.map):
 		#target = NavigationServer2D.map_get_closest_point(Game.map, global_position)
 	#if not Geometry2D.is_point_in_polygon(global_position, Game.battle_map.navigation_polygon.get_vertices()):

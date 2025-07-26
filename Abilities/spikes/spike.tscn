@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://lb7md60bxhck"]
 
-[ext_resource type="Script" uid="uid://beh3h0g4x1tdv" path="res://abilities/spikes/spike.gd" id="1_0xbqg"]
-[ext_resource type="Texture2D" uid="uid://reu662es46mq" path="res://abilities/spikes/spikes.png" id="2_4mqbd"]
-[ext_resource type="Texture2D" uid="uid://da1dmq0lufcyp" path="res://abilities/spikes/earth_particle.png" id="3_t38qj"]
+[ext_resource type="Script" uid="uid://beh3h0g4x1tdv" path="res://Abilities/spikes/spike.gd" id="1_0xbqg"]
+[ext_resource type="Texture2D" uid="uid://reu662es46mq" path="res://Abilities/spikes/spikes.png" id="2_4mqbd"]
+[ext_resource type="Texture2D" uid="uid://da1dmq0lufcyp" path="res://Abilities/spikes/earth_particle.png" id="3_t38qj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dl5ej"]
 radius = 15.0
@@ -59,5 +59,5 @@ affect_navigation_mesh = true
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="timeout" from="Delete" to="." method="_delete"]
 [connection signal="timeout" from="Delete" to="." method="_on_delete_timeout"]
+[connection signal="timeout" from="Delete" to="." method="_delete"]
