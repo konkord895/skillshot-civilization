@@ -6,7 +6,7 @@ const ICON = preload("res://abilities/icon.tscn")
 @onready var ability1 = load_ability("small_firekiller")
 @onready var ability2 = load_ability("shadow_domain")
 @onready var ability3 = load_ability("spikes")
-@onready var ability4 = load_ability("megablast")
+@onready var ability4 = load_ability("bopl_tower")
 
 @onready var abilities = [ability1, ability2, ability3, ability4]
 
