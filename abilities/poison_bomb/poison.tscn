@@ -23,7 +23,5 @@ shape = SubResource("CircleShape2D_osxtr")
 radius = 35.0
 affect_navigation_mesh = true
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

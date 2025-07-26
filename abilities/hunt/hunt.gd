@@ -16,7 +16,7 @@ func _execute(target: Vector2, state: State):
 		for challenger in challengers:
 			if challenger != user:
 				hunter.prey = challenger
-		Projectiles.add_child(hunter)
+		Game.battle_region.add_child(hunter)
 
 
 

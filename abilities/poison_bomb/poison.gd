@@ -3,10 +3,6 @@ extends Projectile
 var entities_inside = []
  
 
-func _ready() -> void:
-	init_nav()
-
-
 func _process(delta: float) -> void:
 	for entity in entities_inside:
 		pass # Poison

@@ -21,7 +21,7 @@ func _execute(target: Vector2, state: State):
 		domain.texture = SHADOW_DOMAIN
 		domain.global_position = global_position
 		domain.scale = Vector2.ZERO
-		Projectiles.add_child(domain)
+		Game.battle_region.add_child(domain)
 		var tween = create_tween()
 		tween.tween_property(domain, "scale", Vector2(size, size), 0.25)
 
@@ -33,7 +33,7 @@ func _execute(target: Vector2, state: State):
 		var s_material = ShaderMaterial.new()
 		s_material.shader = MELT
 		shadow.material = s_material
-		Projectiles.add_child(shadow)
+		Game.battle_region.add_child(shadow)
 		shadow.global_position = global_position
 		var tween = create_tween()
 		tween.set_parallel(true)

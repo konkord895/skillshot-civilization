@@ -25,7 +25,7 @@ func _execute(target: Vector2, state: State) -> void:
 			var ghost = Sprite2D.new()
 			ghost.texture = SPIKE_TEXTURE
 			ghost.modulate = Color(0.671, 1.0, 0.616, 0.635)
-			Projectiles.add_child(ghost)
+			Game.battle_region.add_child(ghost)
 			ghosts.append(ghost)
 
 		for i in range(amount): # Set the ghosts' positions
@@ -54,4 +54,4 @@ func spawn_spike(coords: Vector2) -> void:
 	var spike = SPIKE.instantiate()
 	spike.global_position = coords
 	spike.user = user
-	Projectiles.add_child(spike)
+	Game.battle_region.add_child(spike)

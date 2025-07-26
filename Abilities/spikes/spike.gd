@@ -1,6 +1,5 @@
 extends Projectile
 
-var user: Entity
 @onready var warning_particles: GPUParticles2D = $WarningParticles
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var delete_timer: Timer = $Delete
@@ -8,7 +7,6 @@ var user: Entity
 
 
 func _ready() -> void:
-	init_nav()
 	warning_particles.emitting = true
 	activation_timer.start()
 	await activation_timer.timeout

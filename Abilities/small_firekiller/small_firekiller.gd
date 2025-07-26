@@ -18,7 +18,7 @@ func _execute(target: Vector2, state: State):
 			fire_inst.direction = Vector2.RIGHT
 		fire_inst.global_position = global_position
 		fire_inst.user = user
-		Projectiles.add_child(fire_inst)
+		Game.battle_region.add_child(fire_inst)
 		ability_duration.start()
 		
 	elif state == State.HELD and executing: # Rotate toward target

@@ -2,12 +2,7 @@ extends Projectile
 
 var start_node: Node2D
 var end_node: Node2D
-var user: Entity
 @onready var lightning: Sprite2D = $Lightning
-
-
-func _ready() -> void:
-	init_nav()
 
 
 func _process(delta: float) -> void:

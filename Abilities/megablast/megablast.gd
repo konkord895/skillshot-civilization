@@ -15,7 +15,7 @@ func _execute(target: Vector2, state : State):
 	megablast.global_position = global_position
 	megablast.modulate = Color(1, 1, 1, 0.1)
 	megablast.user = user
-	Projectiles.add_child(megablast)
+	Game.battle_region.add_child(megablast)
 	
 	ability_duration.start()
 	await ability_duration.timeout

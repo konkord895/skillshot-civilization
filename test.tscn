@@ -10,7 +10,8 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-192, -108, 192, -108, 192, 108, -192, 108)])
 agent_radius = 30.0
 
-[node name="Node2D" type="Node2D"]
+[node name="Test" type="NavigationRegion2D"]
+navigation_polygon = SubResource("NavigationPolygon_8uh7m")
 script = ExtResource("1_6uqi0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -21,6 +22,3 @@ position = Vector2(-4, 28)
 
 [node name="Enemy" parent="." groups=["challenger"] instance=ExtResource("2_8uh7m")]
 position = Vector2(-2, -35)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_8uh7m")

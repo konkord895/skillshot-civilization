@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba3u2o2psesq"]
 
-[ext_resource type="Script" uid="uid://b5ft84l1qm5k5" path="res://Abilities/hunt/hunt.gd" id="1_hwf6r"]
-[ext_resource type="Texture2D" uid="uid://b84uy88u43ov1" path="res://Abilities/hunt/slug_anim_f0.png" id="2_jlvcl"]
+[ext_resource type="Script" uid="uid://b5ft84l1qm5k5" path="res://abilities/hunt/hunt.gd" id="1_hwf6r"]
+[ext_resource type="Texture2D" uid="uid://b84uy88u43ov1" path="res://abilities/hunt/slug_anim_f0.png" id="2_jlvcl"]
 
 [node name="Hunt" type="Node2D"]
 script = ExtResource("1_hwf6r")

@@ -4,7 +4,6 @@ const SPEED := 150.0
 var prey: Node2D
 var hunting = false
 var overlapping: Area2D = null
-var user: Entity
 @onready var sprite: Sprite2D = $Sprite
 
 
@@ -14,7 +13,6 @@ func _ready() -> void:
 	await tween.finished
 	hunting = true
 	monitoring = true
-	init_nav()
 
 
 func _process(delta: float) -> void:

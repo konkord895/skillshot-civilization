@@ -14,13 +14,13 @@ func _execute(target: Vector2, state: State) -> void:
 		tower = Sprite2D.new()
 		tower.texture = TOWER
 		tower.global_position = global_position
-		Projectiles.add_child(tower)
+		Game.battle_region.add_child(tower)
 		
 		lightning = LIGHTNING.instantiate()
 		lightning.start_node = self
 		lightning.end_node = tower
 		lightning.user = user
-		Projectiles.add_child(lightning)
+		Game.battle_region.add_child(lightning)
 
 
 

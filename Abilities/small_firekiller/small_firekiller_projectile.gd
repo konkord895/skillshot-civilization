@@ -3,13 +3,11 @@ extends Projectile
 @export var speed := 250.0
 var direction: Vector2
 var flying := false
-var user: Entity
 var target: Vector2
 
 
 func _ready() -> void:
 	rotation = direction.angle()
-	init_nav()
 
 
 func _process(delta: float) -> void:

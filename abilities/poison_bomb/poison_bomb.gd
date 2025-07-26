@@ -18,11 +18,12 @@ func _execute(target: Vector2, state: State) -> void:
 	bomb.global_position = global_position
 	bomb.target = target
 	bomb.fly_time = fly_time
-	Projectiles.add_child(bomb)
+	Game.battle_region.add_child(bomb)
 	
 	poison = POISON.instantiate()
 	poison.global_position = target
-	Projectiles.add_child(poison)
+	poison.user = user
+	Game.battle_region.add_child(poison)
 	await get_tree().create_timer(fly_time).timeout
 	poison.visible = true
 	poison.monitoring = true
